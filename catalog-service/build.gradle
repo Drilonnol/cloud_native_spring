@@ -20,7 +20,19 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// Jakarta Validation API (new Jakarta namespace)
+	implementation 'jakarta.validation:jakarta.validation-api:3.0.0'
+
+	// Hibernate Validator (Jakarta-compatible version)
+	implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
+
+	// Jakarta Expression Language (required for Hibernate Validator)
+	runtimeOnly 'org.glassfish:jakarta.el:4.0.0'  // Updated to a more stable version
+
 }
 
 tasks.named('test') {
